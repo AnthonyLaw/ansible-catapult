@@ -1,0 +1,7 @@
+# Catapult private Server Nodes
+[catapult-server-peer-node]
+peer-server-0 ansible_host=localhost ansible_user=ubuntu ansible_port=22
+peer-server-1 ansible_host=localhost ansible_user=ubuntu ansible_port=22
+
+[catapult-server-api-node]
+api-server-0 ansible_host=localhost ansible_user=ubuntu ansible_port=22

@@ -1,0 +1,9 @@
+---
+# Simple playbook for debugging ndoes
+
+  - hosts: all
+    become: yes
+    tasks:
+      - name: Debug
+        debug:
+          msg: "your server is working!"

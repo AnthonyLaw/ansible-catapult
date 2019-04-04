@@ -1,0 +1,10 @@
+---
+# catapult config file such as peer or api
+catapult_config:
+  src: path_of_config_source
+  remote_dest: path_of_remote_dest
+
+# patch update peer info
+catapult_patch_peer:
+  src: path_of_config_source
+  remote_dest: path_of_remote_dest

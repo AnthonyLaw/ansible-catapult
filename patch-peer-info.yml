@@ -1,0 +1,18 @@
+---
+# patch peer infomation such as peer list and api list
+
+  - hosts: catapult-server-peer-node
+    become: yes
+    tasks:
+      - name: Patch peer list
+        copy:
+          src: "{{ catapult_patch_peer.src }}"
+          dest: "{{ catapult_patch_peer.remote_dest }}/peer-node-0/userconfig/resources/"
+
+  - hosts: catapult-server-api-node
+    become: yes
+    tasks:
+      - name: Patch peer list
+        copy:
+          src: "{{ catapult_patch_peer.src }}"
+          dest: "{{ catapult_patch_peer.remote_dest }}/api-node-0/userconfig/resources/"

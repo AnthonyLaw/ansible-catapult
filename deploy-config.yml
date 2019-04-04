@@ -1,0 +1,18 @@
+---
+# Upload config to server
+
+  - hosts: catapult-server-peer-node
+    become: yes
+    tasks:
+      - name: Upload Peer node config
+        copy:
+          src: "{{ catapult_config.src }}/Peer-node/"
+          dest: "{{ catapult_config.remote_dest }}"
+
+  - hosts: catapult-server-api-node
+    become: yes
+    tasks:
+      - name: Upload Api node config
+        copy:
+          src: "{{ catapult_config.src }}/Api-node/"
+          dest: "{{ catapult_config.remote_dest }}"

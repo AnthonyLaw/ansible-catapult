@@ -1,0 +1,17 @@
+---
+# Simple playbook for install all requirement.
+
+  - hosts: all
+    become: true
+    gather_facts: true
+    pre_tasks:
+      - name: install python 2
+        raw: bash -c "test -e /usr/bin/python || (apt -qqy update && apt install -qqy python-minimal)"
+    roles:
+      - role: common
+        tags: dependencies
+      - role: "nickjj.docker"
+        tags: ["docker"]
+        vars:
+            docker__version: "18.06"
+            docker__compose_version: "1.23"

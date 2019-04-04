@@ -1,0 +1,9 @@
+- name: 'Install Common Software'
+  apt:
+    name: ['unzip', 'curl', 'jq', 'htop', 'ntp', 'tree', 'python-pip']
+    state: present
+    update_cache: yes
+
+- name: 'Install pip packages'
+  pip:
+    name: ['boto3']
